@@ -18,7 +18,7 @@ function getAllUser() {
                 var follow_num=data[i].follow_num;
                 var punch_time=data[i].punch_time;
                 var point=data[i].point;
-                tableData+="<th>"+"<input type=\"checkbox\" name=\"choose\" value="+uniond+"/>"+"</th>";
+                tableData+="<th>"+"<input type=\"checkbox\" name=\"choose\" value="+uniond+"></th>";
                 tableData+="<td>"+uniond+"</td>";
                 tableData+="<td>"+name+"</td>";
                 tableData+="<td>"+sex+"</td>";
@@ -41,19 +41,18 @@ function getAllUser() {
 
 
 function deleteUser() {
+
     alert($("input[name='choose']")[1].value)
     for(var i=0;i<$("input[name='choose']").length;i++){
         if($("input[name='choose']")[i].checked){
             var data={
-
-                "unionid":$("input[name='choose']")[i].value,
-                _method:"DELETE"
+                "unionid":$("input[name='choose']")[i].value
             };
 
             $.ajax({
                 url: "http://localhost:8080/api/users/",
                 dataType: 'json',
-                type: 'post',
+                type: 'delete',
                 contentType: "application/json;charset=UTF-8",
                 data:JSON.stringify(data),
                 success: function (result) {
