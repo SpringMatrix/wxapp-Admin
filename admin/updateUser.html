@@ -1,0 +1,50 @@
+
+
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="web/font-awesome.min.css">
+  <link rel="stylesheet" href="web/bootstrap-4.3.1.css">
+    <title>用户信息编辑界面</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="Manage/UserManage.js"></script>
+</head>
+
+<body onload="updateTable()">
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="table-responsive">
+            <table class="table table-bordered ">
+              <thead class="thead-dark">
+              <tr>
+                  <th>用户id编号</th>
+                  <th>姓名</th>
+                  <th>性别</th>
+                  <th>隐私设置</th>
+                  <th>标签</th>
+                  <th>粉丝数目</th>
+                  <th>签到时间</th>
+                  <th>积分</th>
+              </tr>
+              </thead>
+
+                <tbody id="tbody_updateUser">
+                </tbody>
+            </table>
+
+          </div>
+            <div class="col-md-12"><a class="btn btn-primary" onclick="updateUser()">Button</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
