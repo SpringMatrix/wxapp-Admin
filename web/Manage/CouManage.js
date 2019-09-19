@@ -3,6 +3,8 @@ function getAllCou() {
     var delete_btn="<a class=\"btn btn-primary\" onclick=\"deleteCou()\">删除</a>";
     $("#delete_btn").html(delete_btn);
 
+    var search_btn="<button class=\"btn btn-primary\" type=\"button\" onclick=\"selectCouClick()\"><i class=\"fa fa-search\"></i></button>";
+    $("#search_btn").html(search_btn);
 
     var tableTitle=" <table class=\"table table-bordered \">\n" +
         "                        <thead class=\"thead-dark\">\n" +
@@ -255,7 +257,7 @@ function check(id) {
                     contentType: "application/json;charset=UTF-8",
                     success:function (result) {
                         if (result){
-                            window.location.href="course.html";
+                            window.location.href="admin.html";
                         }else{
                             alert("更改失败");
                         }
@@ -273,7 +275,7 @@ function check(id) {
                     contentType: "application/json;charset=UTF-8",
                     success:function (result) {
                         if (result){
-                            window.location.href="course.html";
+                            window.location.href="admin.html";
                         }else{
                             alert("更改失败");
                         }
@@ -504,7 +506,7 @@ function selectItem4() {
 function selectItem5() {
     sessionStorage.setItem('dropitem', 5);
 }
-function selectClick() {
+function selectCouClick() {
     var num = sessionStorage.getItem('dropitem');
     var input=$("#inlineFormInputGroup").val();
     console.log(num);

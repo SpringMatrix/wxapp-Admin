@@ -3,7 +3,8 @@ function getAllNews() {
     var delete_btn="<a class=\"btn btn-primary\" onclick=\"deleteByIdNews()\">删除</a>";
     $("#delete_btn").html(delete_btn);
 
-
+    var search_btn="<button class=\"btn btn-primary\" type=\"button\" onclick=\"selectNewsClick()\"><i class=\"fa fa-search\"></i></button>";
+    $("#search_btn").html(search_btn);
 
     var tableTitle="<table class=\"table table-bordered \">\n" +
         "                        <thead class=\"thead-dark\">\n" +
@@ -50,7 +51,7 @@ function getAllNews() {
                 tableData+="<td>"+time+"</td>";
                 tableData+="<td>"+visible+"</td>";
                 tableData+="<td><button onclick='seting("+id+")'>编辑</button></td>";
-                tableData+="<td><button onclick='check("+id+")'>审核</button></td>";
+                tableData+="<td><button onclick='checkNews("+id+")'>审核</button></td>";
                 tableData+="</tr>";
             }
             $("#tbody").html(tableData);
@@ -139,7 +140,7 @@ function selectByIdNews(id) {
                         tableData += "<td>" + time + "</td>";
                         tableData += "<td>" + visible + "</td>";
                         tableData += "<td><button onclick='seting(" + id + ")'>编辑</button></td>";
-                        tableData += "<td><button onclick='check(" + id + ")'>审核</button></td>";
+                        tableData += "<td><button onclick='checkNews(" + id + ")'>审核</button></td>";
                         tableData += "</tr>";
 
                         $("#tbody").html(tableData);
@@ -174,7 +175,7 @@ function selectByUnionidNews(unionid) {
                 tableData+="<td>"+time+"</td>";
                 tableData+="<td>"+visible+"</td>";
                 tableData+="<td><button onclick='seting("+id+")'>编辑</button></td>";
-                tableData+="<td><button onclick='check("+id+")'>审核</button></td>";
+                tableData+="<td><button onclick='checkNews("+id+")'>审核</button></td>";
                 tableData+="</tr>";
             }
             $("#tbody").html(tableData);
@@ -227,7 +228,7 @@ function updateTable() {
     });
 
 }
-function check(id) {
+function checkNews(id) {
     $.ajax({
         url: "http://localhost:8080/api/news/id?id="+id,
         dataType: 'json',
@@ -242,7 +243,7 @@ function check(id) {
                     contentType: "application/json;charset=UTF-8",
                     success:function (result) {
                         if (result){
-                            window.location.href="news.html";
+                            window.location.href="admin.html";
                         }else{
                             alert("更改失败");
                         }
@@ -260,7 +261,7 @@ function check(id) {
                     contentType: "application/json;charset=UTF-8",
                     success:function (result) {
                         if (result){
-                            window.location.href="news.html";
+                            window.location.href="admin.html";
                         }else{
                             alert("更改失败");
                         }
@@ -291,7 +292,7 @@ function selectItem1() {
 function selectItem2() {
     sessionStorage.setItem('dropitem', 2);
 }
-function selectClick() {
+function selectNewsClick() {
     var num = sessionStorage.getItem('dropitem');
     var input=$("#inlineFormInputGroup").val();
     console.log(num);

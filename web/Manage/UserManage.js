@@ -3,6 +3,8 @@ function getAllUser() {
     var delete_btn="<a class=\"btn btn-primary\" onclick=\"deleteUser()\">删除</a>";
     $("#delete_btn").html(delete_btn);
 
+    var search_btn="<button class=\"btn btn-primary\" type=\"button\" onclick=\"selectUserClick()\"><i class=\"fa fa-search\"></i></button>";
+    $("#search_btn").html(search_btn);
 
     var tableTitle="            <table  class=\"table table-bordered \">\n" +
         "              <thead class=\"thead-dark\">\n" +
@@ -52,7 +54,7 @@ function getAllUser() {
                 tableData+="<td>"+follow_num+"</td>";
                 tableData+="<td>"+punch_time+"</td>";
                 tableData+="<td>"+point+"</td>";
-                tableData+="<td><button onclick='seting("+unionid+")'>编辑</button></td>";
+                tableData+="<td><button onclick='setUsering("+unionid+")'>编辑</button></td>";
                 tableData+="</tr>";
             }
             $("#tbody").html(tableData);
@@ -78,7 +80,9 @@ function deleteUser() {
             });
         }
         }
-    getAllUser();
+
+
+
 }
 
 // 更新用户信息
@@ -146,7 +150,7 @@ function selectById(unionid ) {
             tableData+="<td>"+follow_num+"</td>";
             tableData+="<td>"+punch_time+"</td>";
             tableData+="<td>"+point+"</td>";
-            tableData+="<td><button onclick='seting("+unionid+")'>编辑</button></td>";
+            tableData+="<td><button onclick='setUsering("+unionid+")'>编辑</button></td>";
             tableData+="</tr>";
             $("#tbody").html(tableData);
 
@@ -157,7 +161,7 @@ function selectById(unionid ) {
     });
 }
 // 界面跳转
-function seting(unionid) {
+function setUsering(unionid) {
 
     sessionStorage.setItem('updateUser_num', unionid);
     window.location.href="updateUser.html";
@@ -228,7 +232,7 @@ function selectByName(name) {
                 tableData+="<td>"+follow_num+"</td>";
                 tableData+="<td>"+punch_time+"</td>";
                 tableData+="<td>"+point+"</td>";
-                tableData+="<td><button onclick='seting("+unionid+")'>编辑</button></td>";
+                tableData+="<td><button onclick='setUsering("+unionid+")'>编辑</button></td>";
                 tableData+="</tr>";
             }
             $("#tbody").html(tableData);
@@ -266,7 +270,7 @@ function selectByNameLike(name) {
                 tableData+="<td>"+follow_num+"</td>";
                 tableData+="<td>"+punch_time+"</td>";
                 tableData+="<td>"+point+"</td>";
-                tableData+="<td><button onclick='seting("+unionid+")'>编辑</button></td>";
+                tableData+="<td><button onclick='setUsering("+unionid+")'>编辑</button></td>";
                 tableData+="</tr>";
             }
             $("#tbody").html(tableData);
@@ -295,7 +299,7 @@ function selectItem2() {
 function selectItem3() {
     sessionStorage.setItem('dropitem', 3);
 }
-function selectClick() {
+function selectUserClick() {
     var num = sessionStorage.getItem('dropitem');
     var input=$("#inlineFormInputGroup").val();
     console.log(num);
