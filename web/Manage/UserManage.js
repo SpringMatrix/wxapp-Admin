@@ -1,5 +1,9 @@
 // 查找全部用户
 function getAllUser() {
+    var delete_btn="<a class=\"btn btn-primary\" onclick=\"deleteUser()\">删除</a>";
+    $("#delete_btn").html(delete_btn);
+
+
     var tableTitle="            <table  class=\"table table-bordered \">\n" +
         "              <thead class=\"thead-dark\">\n" +
         "                <tr>\n" +
@@ -148,7 +152,7 @@ function selectById(unionid ) {
 
         },
         error:function (result) {
-            alert("fail")
+            alert("查无此人")
         }
     });
 }
@@ -231,7 +235,7 @@ function selectByName(name) {
 
         },
         error:function (result) {
-            alert("fail")
+            alert("查无此人")
         }
     });
 
@@ -269,7 +273,7 @@ function selectByNameLike(name) {
 
         },
         error:function (result) {
-            alert("fail")
+            alert("查无此人")
         }
     });
 

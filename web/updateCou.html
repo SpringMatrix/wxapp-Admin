@@ -1,0 +1,54 @@
+
+
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css">
+    <title>信息编辑界面</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="Manage/CouManage.js"></script>
+</head>
+
+<body onload="updateTable()">
+<div class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-bordered ">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th>课程编号</th>
+                            <th>用户编号</th>
+                            <th>课程名</th>
+                            <th>图片链接</th>
+                            <th>简介</th>
+                            <th>地址</th>
+                            <th>标签1</th>
+                            <th>标签2</th>
+                            <th>标签3</th>
+                            <th>播放次数</th>
+                            <th>收藏次数</th>
+                            <th>审核状态</th>
+                        </tr>
+                        </thead>
+
+                        <tbody id="tbody_updateCou">
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="col-md-12"><a class="btn btn-primary" onclick="updateCou()">Button</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

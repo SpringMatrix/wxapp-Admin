@@ -1,0 +1,49 @@
+
+
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css">
+    <title>用户信息编辑界面</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="Manage/NewsManage.js"></script>
+</head>
+
+<body onload="updateTable()">
+<div class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-bordered ">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th>动态编号</th>
+                            <th>用户id</th>
+                            <th>姓名</th>
+                            <th>头像链接</th>
+                            <th>内容</th>
+                            <th>时间</th>
+                            <th>审核状态</th>
+                        </tr>
+                        </thead>
+
+                        <tbody id="tbody_updatenew">
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="col-md-12"><a class="btn btn-primary" onclick="updateNews()">Button</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
