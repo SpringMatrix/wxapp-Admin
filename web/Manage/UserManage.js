@@ -32,7 +32,7 @@ function getAllUser() {
     var tableData="<tr>";
 
     $.ajax({
-        url: "http://localhost:8080/api/users/all",
+        url: "http://101.200.61.185:8080/api/users/all",
         dataType: 'json',
         type:'get',
         success:function(data){
@@ -72,7 +72,7 @@ function deleteUser() {
     for(var i=0;i<$("input[name='choose']").length;i++){
         if($("input[name='choose']")[i].checked){
             $.ajax({
-                url: "http://localhost:8080/api/users/?unionid="+$("input[name='choose']")[i].value,
+                url: "http://101.200.61.185:8080/api/users/?unionid="+$("input[name='choose']")[i].value,
                 type: 'delete',
                 error: function (result) {
                     alert("fail");
@@ -107,7 +107,7 @@ function updateUser() {
 
     }
             $.ajax({
-                url: "http://localhost:8080/api/users/",
+                url: "http://101.200.61.185:8080/api/users/",
                 type: 'put',
                 data:JSON.stringify(data),
                 cache: false,
@@ -128,7 +128,7 @@ function updateUser() {
 // 查找指定id用户
 function selectById(unionid ) {
     $.ajax({
-        url: "http://localhost:8080/api/users/unionid?unionid="+unionid,
+        url: "http://101.200.61.185:8080/api/users/unionid?unionid="+unionid,
         dataType: 'json',
         type:'get',
         success:function(data){
@@ -174,7 +174,7 @@ function updateTable() {
     var num = sessionStorage.getItem('updateUser_num');
     console.log(num);
     $.ajax({
-        url: "http://localhost:8080/api/users/unionid?unionid="+num,
+        url: "http://101.200.61.185:8080/api/users/unionid?unionid="+num,
         dataType: 'json',
         type:'get',
         success:function(data){
@@ -210,7 +210,7 @@ function updateTable() {
 function selectByName(name) {
     var tableData="<tr>";
     $.ajax({
-        url: "http://localhost:8080/api/users/name?name="+name,
+        url: "http://101.200.61.185:8080/api/users/name?name="+name,
         dataType: 'json',
         type:'get',
         success:function(data){
@@ -248,7 +248,7 @@ function selectByName(name) {
 function selectByNameLike(name) {
     var tableData="<tr>";
     $.ajax({
-        url: "http://localhost:8080/api/users/namelike?name="+name,
+        url: "http://101.200.61.185:8080/api/users/namelike?name="+name,
         dataType: 'json',
         type:'get',
         success:function(data){

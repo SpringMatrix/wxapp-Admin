@@ -35,7 +35,7 @@ function getAllCou() {
     var tableData="<tr>";
 
     $.ajax({
-        url: "http://localhost:8080/api/courses/all",
+        url: "http://101.200.61.185:8080/api/courses/all",
         dataType: 'json',
         type:'get',
         success:function(data){
@@ -84,7 +84,7 @@ function deleteCou() {
     for(var i=0;i<$("input[name='choose']").length;i++){
         if($("input[name='choose']")[i].checked){
             $.ajax({
-                url: "http://localhost:8080/api/courses/?course_id="+$("input[name='choose']")[i].value,
+                url: "http://101.200.61.185:8080/api/courses/?course_id="+$("input[name='choose']")[i].value,
                 type: 'delete',
                 error: function (result) {
                     alert("fail");
@@ -96,7 +96,7 @@ function deleteCou() {
 function selectByIdCou(course_id ) {
     var tableData="<tr>";
     $.ajax({
-        url: "http://localhost:8080/api/courses/id?course_id="+course_id,
+        url: "http://101.200.61.185:8080/api/courses/id?course_id="+course_id,
         dataType: 'json',
         type:'get',
         success:function(data){
@@ -167,7 +167,7 @@ function updateCou() {
 
     }
     $.ajax({
-        url: "http://localhost:8080/api/courses/",
+        url: "http://101.200.61.185:8080/api/courses/",
         type: 'put',
         data:JSON.stringify(data),
         cache: false,
@@ -201,7 +201,7 @@ function updateTable() {
     var num = sessionStorage.getItem('updateCou_num');
     console.log(num);
     $.ajax({
-        url: "http://localhost:8080/api/courses/id?course_id="+num,
+        url: "http://101.200.61.185:8080/api/courses/id?course_id="+num,
         dataType: 'json',
         type:'get',
         success:function(data){
@@ -244,13 +244,13 @@ function updateTable() {
 }
 function check(id) {
     $.ajax({
-        url: "http://localhost:8080/api/courses/id?course_id="+id,
+        url: "http://101.200.61.185:8080/api/courses/id?course_id="+id,
         dataType: 'json',
         type:'get',
         success:function(data){
             if(data.visible==true){
                 $.ajax({
-                    url: "http://localhost:8080/api/courses/check-no?id="+id,
+                    url: "http://101.200.61.185:8080/api/courses/check-no?id="+id,
                     type: 'put',
                     cache: false,
                     dataType: "json",
@@ -268,7 +268,7 @@ function check(id) {
                 });
             }else {
                 $.ajax({
-                    url: "http://localhost:8080/api/courses/check-ok?id="+id,
+                    url: "http://101.200.61.185:8080/api/courses/check-ok?id="+id,
                     type: 'put',
                     cache: false,
                     dataType: "json",
@@ -296,7 +296,7 @@ function check(id) {
 function selectByIdUnionid(unionid) {
     var tableData="<tr>";
     $.ajax({
-        url: "http://localhost:8080/api/courses/unionid?unionid="+unionid,
+        url: "http://101.200.61.185:8080/api/courses/unionid?unionid="+unionid,
         dataType: 'json',
         type:'get',
         success:function(data){
@@ -343,7 +343,7 @@ function selectByIdUnionid(unionid) {
 function selectByTag1Course(tag1) {
     var tableData="<tr>";
     $.ajax({
-        url: "http://localhost:8080/api/courses/tag1?tag1="+tag1,
+        url: "http://101.200.61.185:8080/api/courses/tag1?tag1="+tag1,
         dataType: 'json',
         type:'get',
         success:function(data){
@@ -390,7 +390,7 @@ function selectByTag1Course(tag1) {
 function selectByTag2Course(tag2) {
     var tableData="<tr>";
     $.ajax({
-        url: "http://localhost:8080/api/courses/tag2?tag2="+tag2,
+        url: "http://101.200.61.185:8080/api/courses/tag2?tag2="+tag2,
         dataType: 'json',
         type:'get',
         success:function(data){
@@ -437,7 +437,7 @@ function selectByTag2Course(tag2) {
 function selectByTag3Course(tag3) {
     var tableData="<tr>";
     $.ajax({
-        url: "http://localhost:8080/api/courses/tag3?tag3="+tag3,
+        url: "http://101.200.61.185:8080/api/courses/tag3?tag3="+tag3,
         dataType: 'json',
         type:'get',
         success:function(data){

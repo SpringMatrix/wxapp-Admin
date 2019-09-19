@@ -30,7 +30,7 @@ function getAllNews() {
     var tableData="<tr>";
 
     $.ajax({
-        url: "http://localhost:8080/api/news/all",
+        url: "http://101.200.61.185:8080/api/news/all",
         dataType: 'json',
         type:'get',
         success:function(data){
@@ -68,7 +68,7 @@ function deleteByIdNews() {
     for(var i=0;i<$("input[name='choose']").length;i++){
         if($("input[name='choose']")[i].checked){
             $.ajax({
-                url: "http://localhost:8080/api/news/?id="+$("input[name='choose']")[i].value,
+                url: "http://101.200.61.185:8080/api/news/?id="+$("input[name='choose']")[i].value,
                 type: 'delete',
                 error: function (result) {
                     alert("fail");
@@ -96,7 +96,7 @@ function updateNews() {
 
     }
     $.ajax({
-        url: "http://localhost:8080/api/news/",
+        url: "http://101.200.61.185:8080/api/news/",
         type: 'put',
         data:JSON.stringify(data),
         cache: false,
@@ -117,7 +117,7 @@ function updateNews() {
 function selectByIdNews(id) {
     var tableData="<tr>";
         $.ajax({
-        url: "http://localhost:8080/api/news/id?id="+id,
+        url: "http://101.200.61.185:8080/api/news/id?id="+id,
         dataType: 'json',
         type:'get',
             success:function(data){
@@ -154,7 +154,7 @@ function selectByIdNews(id) {
 function selectByUnionidNews(unionid) {
     var tableData="<tr>";
     $.ajax({
-        url: "http://localhost:8080/api/news/unionid?unionid="+unionid,
+        url: "http://101.200.61.185:8080/api/news/unionid?unionid="+unionid,
         dataType: 'json',
         type:'get',
         success:function(data){
@@ -198,7 +198,7 @@ function updateTable() {
     var num = sessionStorage.getItem('updatenew_num');
     console.log(num);
     $.ajax({
-        url: "http://localhost:8080/api/news/id?id="+num,
+        url: "http://101.200.61.185:8080/api/news/id?id="+num,
         dataType: 'json',
         type:'get',
         success:function(data){
@@ -230,13 +230,13 @@ function updateTable() {
 }
 function checkNews(id) {
     $.ajax({
-        url: "http://localhost:8080/api/news/id?id="+id,
+        url: "http://101.200.61.185:8080/api/news/id?id="+id,
         dataType: 'json',
         type:'get',
         success:function(data){
             if(data.visible==true){
                 $.ajax({
-                    url: "http://localhost:8080/api/news/check-no?id="+id,
+                    url: "http://101.200.61.185:8080/api/news/check-no?id="+id,
                     type: 'put',
                     cache: false,
                     dataType: "json",
@@ -254,7 +254,7 @@ function checkNews(id) {
                 });
             }else {
                 $.ajax({
-                    url: "http://localhost:8080/api/news/check-ok?id="+id,
+                    url: "http://101.200.61.185:8080/api/news/check-ok?id="+id,
                     type: 'put',
                     cache: false,
                     dataType: "json",
